@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Principal - Sistema de Notas</title>
+    <title>Consultas - Sistema de Notas</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@
         <div class="interface">
             <div class="logo">
                 <a href="index.html">
-                    <img src="grade-f.png" alt="Logo Sistema de Notas">
+                    <img src="public/images/icon/icon1.png" alt="Logo Sistema de Notas">
                 </a>
             </div>
             <nav class="menu-desktop">
@@ -32,15 +32,22 @@
         </div>
     </header>
     
-    <section class="topo-do-site">
+    <section class="projetos">
         <div class="interface">
+            <h2 class="titulo">CONSULTAR <span>NOTAS</span></h2>
             <div class="flex">
-                <div class="txt-topo-site">
-                    <h1>Sistema de <span>Notas Escolares</span></h1>
-                    <p>Gerencie e acompanhe suas notas escolares de forma simples e eficiente.</p>
-                </div>
-                <div class="img-topo-site">
-                    <img src="cvps-logo-cpt.png" alt="Calculadora">
+                <div class="projetos-box">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Todas as Notas Cadastradas</h3>
+                        </div>
+                        <div class="card-body">
+                            <button id="btn-mostrar-notas" class="btn-menu">
+                                <i class="bi bi-list-ul"></i> Mostrar Todas as Notas
+                            </button>
+                            <div id="resultado-notas" class="mt-4"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -50,25 +57,33 @@
     
     <section class="projetos">
         <div class="interface">
-            <h2 class="titulo">MENU <span>PRINCIPAL</span></h2>
+            <h2 class="titulo">CONSULTAR <span>MÉDIAS</span></h2>
             <div class="flex">
                 <div class="projetos-box">
                     <div class="card">
                         <div class="card-header">
-                            <h3>Opções Disponíveis</h3>
+                            <h3>Calcular Média por Matéria</h3>
                         </div>
                         <div class="card-body">
-                            <div class="menu-options">
-                                <a href="cadastro.html" class="btn-menu">
-                                    <i class="bi bi-journal-plus"></i> Cadastrar Nota / Bônus
-                                </a>
-                                <a href="consultas.html" class="btn-menu">
-                                    <i class="bi bi-search"></i> Consultar Notas / Médias
-                                </a>
-                                <a href="situacao.html" class="btn-menu">
-                                    <i class="bi bi-clipboard-check"></i> Situação Acadêmica
-                                </a>
+                            <div class="mb-3">
+                                <label class="form-label menu">Selecione a Matéria:</label>
+                                <select id="select-materia-media" class="form-select">
+                                    <option value="Alemão">Alemão</option>
+                                    <option value="Biologia">Biologia</option>
+                                    <option value="Física">Física</option>
+                                    <option value="Geografia">Geografia</option>
+                                    <option value="História">História</option>
+                                    <option value="Matemática">Matemática</option>
+                                    <option value="Português">Português</option>
+                                    <option value="Química">Química</option>
+                                    <option value="Sociologia">Sociologia</option>
+                                    <option value="Inglês">Inglês</option>
+                                </select>
                             </div>
+                            <button id="btn-calcular-media" class="btn-menu">
+                                <i class="bi bi-calculator"></i> Calcular Média
+                            </button>
+                            <div id="resultado-media" class="mt-4"></div>
                         </div>
                     </div>
                 </div>
@@ -83,7 +98,7 @@
             <div class="line-footer">
                 <div class="flex">
                     <div class="logo-footer">
-                        <img src="grade-f.png" alt="Logo Sistema de Notas">
+                        <img src="public/images/icon/icon1.png" alt="Logo Sistema de Notas">
                     </div>
                     <div class="btn-social">
                         <a href="#" target="_blank"><button><i class="bi bi-github"></i></button></a>

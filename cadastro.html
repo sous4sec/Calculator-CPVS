@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Sistema de Notas</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="interface">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="public/images/icon/icon1.png" alt="Logo Sistema de Notas">
+                </a>
+            </div>
+            <nav class="menu-desktop">
+                <ul>
+                    <li><a href="index.html">Menu Principal</a></li>
+                    <li><a href="cadastro.html">Cadastros</a></li>
+                    <li><a href="consultas.html">Consultas</a></li>
+                    <li><a href="situacao.html">Situação</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="projetos">
+        <div class="interface">
+            <h2 class="titulo">CADASTRO DE <span>NOTAS</span></h2>
+            <div class="flex">
+                <div class="projetos-box">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Cadastrar Nova Nota</h3>
+                        </div>
+                        <div class="card-body">
+                            <div id="form-cadastro">
+                                <div class="mb-3">
+                                    <label class="form-label menu">Selecione a Matéria:</label>
+                                    <select id="select-materia" class="form-select">
+                                        <option value="Alemão">Alemão</option>
+                                        <option value="Biologia">Biologia</option>
+                                        <option value="Física">Física</option>
+                                        <option value="Geografia">Geografia</option>
+                                        <option value="História">História</option>
+                                        <option value="Matemática">Matemática</option>
+                                        <option value="Português">Português</option>
+                                        <option value="Química">Química</option>
+                                        <option value="Sociologia">Sociologia</option>
+                                        <option value="Inglês">Inglês</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label menu">Selecione o Tipo de Prova:</label>
+                                    <select id="select-prova" class="form-select">
+                                        <option value="Atividade Contínua">Atividade Contínua (Peso: 2)</option>
+                                        <option value="Prova Parcial">Prova Parcial (Peso: 2)</option>
+                                        <option value="Prova Unificada">Prova Unificada (Peso: 4)</option>
+                                        <option value="Prova Objetiva">Prova Objetiva (Peso: 2)</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label menu">Insira a Nota (0-10):</label>
+                                    <input type="number" id="input-nota" class="form-control" min="0" max="10" step="0.1">
+                                </div>
+                                <button id="btn-confirmar" class="btn-menu">Confirmar Cadastro</button>
+                            </div>
+                            <div id="resultado-cadastro" class="mt-4"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="projetos-box">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Definir Nota de Bônus</h3>
+                        </div>
+                        <div class="card-body">
+                            <div id="form-bonus">
+                                <div class="mb-3">
+                                    <label class="form-label menu">Digite a nota de bônus para todas as matérias (0-10):</label>
+                                    <input type="number" id="input-bonus" class="form-control" min="0" max="10" step="0.1">
+                                </div>
+                                <button id="btn-confirmar-bonus" class="btn-menu">Confirmar Bônus</button>
+                            </div>
+                            <div id="resultado-bonus" class="mt-4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <hr class="linha-divisoria">
+    
+    <footer>
+        <div class="interface">
+            <div class="line-footer">
+                <div class="flex">
+                    <div class="logo-footer">
+                        <img src="public/images/icon/icon1.png" alt="Logo Sistema de Notas">
+                    </div>
+                    <div class="btn-social">
+                        <a href="#" target="_blank"><button><i class="bi bi-github"></i></button></a>
+                        <a href="#" target="_blank"><button><i class="bi bi-linkedin"></i></button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="line-footer borda">
+                <p><i class="bi bi-c-circle"></i> Sistema de Notas Escolares</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="sistema-notas.js"></script>
+</body>
+</html>

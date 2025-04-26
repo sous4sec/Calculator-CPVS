@@ -1,0 +1,334 @@
+/* ESTILO GERAL */
+:root {
+    /* Cores baseadas no COOLOYS, mas menos saturadas */
+    --cor-fundo: #f5f7fa;
+    --cor-texto: #2d3748;
+    --cor-destaque: #e53e3e; /* Vermelho mais suave */
+    --cor-secundaria: #4a5568;
+    --cor-borda: #e2e8f0;
+    --cor-card: #ffffff;
+    --cor-hover: #edf2f7;
+    --cor-detalhe: #c53030; /* Vermelho mais escuro */
+    
+    /* Bordas arredondadas */
+    --borda-radius: 16px;
+    --borda-fina: 1px solid var(--cor-borda);
+    
+    /* Sombras sutis */
+    --sombra-box: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --sombra-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 500;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+.interface {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* BOTÕES E CONTROLES */
+.btn-menu {
+    padding: 24px 16px;
+    font-size: 16px;
+    color: var(--cor-texto);
+    background-color: var(--cor-card);
+    border: var(--borda-fina);
+    border-radius: var(--borda-radius);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    box-shadow: var(--sombra-box);
+}
+
+.btn-menu:hover {
+    background-color: var(--cor-hover);
+    transform: translateY(-4px);
+    box-shadow: var(--sombra-hover);
+    color: var(--cor-destaque);
+}
+
+.btn-menu i {
+    font-size: 32px;
+    color: var(--cor-destaque);
+    transition: all 0.3s ease;
+}
+
+.btn-menu:hover i {
+    transform: scale(1.1);
+}
+
+/* TÍTULOS E TEXTOS */
+h2.titulo {
+    color: var(--cor-destaque);
+    font-size: 32px;
+    text-align: center;
+    margin: 48px 0 24px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+h2.titulo span {
+    color: var(--cor-secundaria);
+}
+
+/* CABEÇALHO */
+header {
+    padding: 24px 0;
+    background-color: var(--cor-card);
+    border-bottom: var(--borda-fina);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+header > .interface {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a {
+    color: var(--cor-texto);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+header a:hover {
+    color: var(--cor-destaque);
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 32px;
+}
+
+header .logo img {
+    width: 46px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+header .logo img:hover {
+    transform: rotate(-8deg);
+}
+
+/* TOPO DO SITE */
+section.topo-do-site {
+    padding: 80px 0 60px;
+}
+
+section.topo-do-site .flex {
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+}
+
+.topo-do-site h1 {
+    color: var(--cor-destaque);
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    line-height: 1.2;
+}
+
+.topo-do-site h1 span {
+    color: var(--cor-secundaria);
+}
+
+.topo-do-site p {
+    font-size: 18px;
+    color: var(--cor-texto);
+    opacity: 0.9;
+    max-width: 600px;
+    margin-bottom: 32px;
+}
+
+.topo-do-site .img-topo-site img {
+    width: 100%;
+    max-width: 200px;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.1));
+    animation: flutuar 4s ease-in-out infinite alternate;
+}
+
+@keyframes flutuar {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-16px);
+    }
+}
+
+/* SEÇÃO DE PROJETOS/MENU */
+section.projetos {
+    padding: 60px 0;
+}
+
+.projetos-box {
+    background-color: var(--cor-card);
+    border-radius: var(--borda-radius);
+    border: var(--borda-fina);
+    margin: 0 auto;
+    max-width: 1000px;
+    overflow: hidden;
+    box-shadow: var(--sombra-box);
+}
+
+.card-header {
+    padding: 20px;
+    text-align: center;
+    border-bottom: var(--borda-fina);
+    font-size: 20px;
+    color: var(--cor-card);
+    background-color: var(--cor-destaque);
+    font-weight: 600;
+}
+
+.card-body {
+    padding: 40px;
+}
+
+.menu-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+/* RODAPÉ */
+footer {
+    padding: 40px 0;
+    background-color: var(--cor-card);
+    border-top: var(--borda-fina);
+    margin-top: 60px;
+}
+
+footer .flex {
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .logo-footer img {
+    width: 35px;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+footer .logo-footer img:hover {
+    opacity: 1;
+    transform: rotate(8deg);
+}
+
+footer p {
+    font-size: 12px;
+    color: var(--cor-secundaria);
+}
+
+footer .btn-social button {
+    background-color: var(--cor-destaque);
+    color: white;
+    margin-left: 12px;
+    width: 45px;
+    height: 35px;
+    border-radius: 25px ;
+    border: none;
+    box-shadow: inset;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+footer .btn-social button:hover {
+    box-shadow: 0px 0px 20px var(--cor-detalhe);
+    transition: 0.3s;
+    transform: scale(1.05);
+}
+
+/* LINHA DIVISÓRIA */
+.linha-divisoria {
+    border: none;
+    height: 1px;
+    background-color: var(--cor-borda);
+    margin: 64px auto;
+    width: 80%;
+    max-width: 800px;
+}
+
+/* RESPONSIVIDADE */
+@media screen and (max-width: 1024px) {
+    .menu-options {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header nav ul {
+        gap: 20px;
+    }
+    
+    .topo-do-site .flex {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .topo-do-site .img-topo-site img {
+        margin-top: 40px;
+        max-width: 280px;
+    }
+    
+    .menu-options {
+        grid-template-columns: 1fr;
+    }
+    
+    footer .flex {
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+    }
+    
+    footer .btn-social {
+        margin-top: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header nav ul {
+        display: none;
+    }
+    
+    h2.titulo {
+        font-size: 28px;
+    }
+    
+    .card-body {
+        padding: 24px;
+    }
+    
+    .topo-do-site h1 {
+        font-size: 32px;
+    }
+}
