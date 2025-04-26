@@ -68,6 +68,7 @@ body {
     transform: translateY(-4px);
     box-shadow: var(--sombra-hover);
     color: var(--cor-destaque);
+    background-color: rgb(218, 218, 218);
 }
 
 .btn-menu i {
@@ -119,7 +120,12 @@ header a {
 }
 
 header a:hover {
+    font-weight: bold;
     color: var(--cor-destaque);
+}
+
+header .logo a:hover img {
+    transform: rotate(-8deg);
 }
 
 header nav ul {
@@ -129,9 +135,37 @@ header nav ul {
 }
 
 header .logo img {
-    width: 46px;
-    height: auto;
+    width: 45px;
+    height: 45px;
+    margin-bottom: 6px;
+    object-fit: contain;
+    margin-right: 15px;
+    display: block;
     transition: transform 0.3s ease;
+}
+
+header .logo a {
+    text-decoration: none;
+    display: flex;
+    align-items: center; /* <--- muda aqui */
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 12px;
+    text-align: left;
+}
+
+header .logo a h1 {
+    margin-top: 3px;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+header .logo a span {
+    color: var(--cor-destaque);
+    font-weight: bold;
+    padding-right: 10px;
+    font-size: 25px;
+
 }
 
 header .logo img:hover {
@@ -169,6 +203,7 @@ section.topo-do-site .flex {
     margin-bottom: 32px;
 }
 
+
 .topo-do-site .img-topo-site img {
     width: 100%;
     max-width: 200px;
@@ -195,7 +230,7 @@ section.projetos {
     border-radius: var(--borda-radius);
     border: var(--borda-fina);
     margin: 0 auto;
-    max-width: 1000px;
+    max-width: 2000px;
     overflow: hidden;
     box-shadow: var(--sombra-box);
 }
@@ -216,7 +251,9 @@ section.projetos {
 
 .menu-options {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(1200px, 1fr));
     gap: 24px;
 }
 
@@ -249,17 +286,28 @@ footer p {
     color: var(--cor-secundaria);
 }
 
+footer .btn-social {
+    display: flex;
+    flex-direction: row;  /* Alinha os botões na horizontal */
+    justify-content: center;  /* Centraliza os botões horizontalmente */
+    align-items: center;  /* Alinha os itens verticalmente no centro */
+    gap: 13px;  /* Adiciona espaço entre os botões */
+}
+
 footer .btn-social button {
     background-color: var(--cor-destaque);
     color: white;
-    margin-left: 12px;
     width: 45px;
     height: 35px;
-    border-radius: 25px ;
+    border-radius: 25px;
     border: none;
     box-shadow: inset;
     font-size: 16px;
     cursor: pointer;
+    display: flex;
+    align-items: center;  /* Alinha o conteúdo verticalmente */
+    justify-content: center;  /* Alinha horizontalmente */
+    vertical-align: middle;  /* Garante que os botões fiquem alinhados na mesma linha */
 }
 
 footer .btn-social button:hover {
@@ -268,6 +316,15 @@ footer .btn-social button:hover {
     transform: scale(1.05);
 }
 
+footer .btn-social button i img {
+    width: 32px;
+    height: 32px;
+    margin: 0;  /* Remove qualquer margem extra que possa causar desalinhamento */
+    display: block;  /* Faz com que a imagem seja tratada como um bloco */
+}
+
+
+
 /* LINHA DIVISÓRIA */
 .linha-divisoria {
     border: none;
@@ -275,7 +332,7 @@ footer .btn-social button:hover {
     background-color: var(--cor-borda);
     margin: 64px auto;
     width: 80%;
-    max-width: 800px;
+    max-width: 1500px;
 }
 
 /* RESPONSIVIDADE */
