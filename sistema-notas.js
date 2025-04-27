@@ -110,13 +110,30 @@ class SistemaNotas {
         const prova = document.getElementById('select-prova').value;
         const nota = parseFloat(document.getElementById('input-nota').value);
         
-        if (isNaN(nota) || nota < 0 || nota > 10) {
-            this.mostrarResultado("Por favor, insira uma nota válida entre 0 e 10.", "erro", "resultado-cadastro");
+        if (isNaN(nota)) {
+            this.mostrarResultado(`
+                <div class="resultado-box">
+                    <p class="erro">Por favor, insira uma nota válida.</p>
+                </div>
+            `, null, "resultado-cadastro");
+            return;
+        }
+        
+        if (nota < 0 || nota > 10) {
+            this.mostrarResultado(`
+                <div class="resultado-box">
+                    <p class="erro">A nota deve estar entre 0 e 10.</p>
+                </div>
+            `, null, "resultado-cadastro");
             return;
         }
         
         if (prova === "Bônus") {
-            this.mostrarResultado("Use o formulário de bônus para definir notas de bônus.", "erro", "resultado-cadastro");
+            this.mostrarResultado(`
+                <div class="resultado-box">
+                    <p class="erro">Use o formulário de bônus para definir notas de bônus.</p>
+                </div>
+            `, null, "resultado-cadastro");
             return;
         }
         
@@ -127,12 +144,13 @@ class SistemaNotas {
             GerenciadorDados.salvarDados(this.registrosNotas);
             
             let mensagem = `
-                <p class="sucesso">Nota cadastrada com sucesso!</p>
-                <p><span class="destaque">Matéria:</span> ${materia}</p>
-                <p><span class="destaque">Tipo de Prova:</span> ${prova}</p>
-                <p><span class="destaque">Nota:</span> ${nota.toFixed(1)}</p>
-                <p><span class="destaque">Peso:</span> ${registro.peso}</p>
-                <p><span class="destaque">Nota Ponderada:</span> ${registro.nota_ponderada.toFixed(2)}</p>
+                <div class="resultado-box">
+                    <p class="sucesso">Nota cadastrada com sucesso! <button class="btn-editar" onclick="document.getElementById('input-nota').focus()">Editar</button></p>
+                    <p><span class="destaque">Matéria:</span> ${materia}</p>
+                    <p><span class="destaque">Tipo de Prova:</span> ${prova}</p>
+                    <p><span class="destaque">Nota:</span> ${nota.toFixed(1)}</p>
+                    <p><span class="destaque">Peso:</span> ${registro.peso}</p>
+                    <p><span class="destaque">Nota Ponderada:</span> ${registro.nota_ponderada.toFixed(2)}</p>
             `;
             
             if (nota < 6) {
@@ -143,17 +161,35 @@ class SistemaNotas {
                 mensagem += `<p class="erro">Atenção: Nota mínima.</p>`;
             }
             
+            mensagem += `</div>`;
             this.mostrarResultado(mensagem, null, "resultado-cadastro");
         } else {
-            this.mostrarResultado("Erro: Registro não encontrado.", "erro", "resultado-cadastro");
+            this.mostrarResultado(`
+                <div class="resultado-box">
+                    <p class="erro">Erro: Registro não encontrado.</p>
+                </div>
+            `, null, "resultado-cadastro");
         }
     }
 
     definirBonus() {
         const nota = parseFloat(document.getElementById('input-bonus').value);
         
-        if (isNaN(nota) || nota < 0 || nota > 10) {
-            this.mostrarResultado("Por favor, insira uma nota válida entre 0 e 10.", "erro", "resultado-bonus");
+        if (isNaN(nota)) {
+            this.mostrarResultado(`
+                <div class="resultado-box">
+                    <p class="erro">Por favor, insira uma nota válida.</p>
+                </div>
+            `, null, "resultado-bonus");
+            return;
+        }
+        
+        if (nota < 0 || nota > 10) {
+            this.mostrarResultado(`
+                <div class="resultado-box">
+                    <p class="erro">A nota de bônus deve estar entre 0 e 10.</p>
+                </div>
+            `, null, "resultado-bonus");
             return;
         }
         
@@ -168,14 +204,25 @@ class SistemaNotas {
             }
         }
         GerenciadorDados.salvarDados(this.registrosNotas);
-        this.mostrarResultado(`<p class="sucesso">Nota de bônus atualizada para ${valor} em todas as matérias!</p>`, null, "resultado-bonus");
+        const mensagem = `
+            <div class="resultado-box">
+                <p class="sucesso">Nota de bônus atualizada para ${valor} em todas as matérias! 
+                    <button class="btn-editar" onclick="document.getElementById('input-bonus').focus()">Editar</button>
+                </p>
+            </div>
+        `;
+        this.mostrarResultado(mensagem, null, "resultado-bonus");
     }
 
     consultarNotas() {
         this.mostrarTitulo("NOTAS CADASTRADAS", "resultado-notas");
         
         if (this.registrosNotas.length === 0) {
-            this.mostrarResultado(`<p class="aviso">Nenhuma nota cadastrada ainda.</p>`, null, "resultado-notas");
+            this.mostrarResultado(`
+                <div class="resultado-box">
+                    <p class="aviso">Nenhuma nota cadastrada ainda.</p>
+                </div>
+            `, null, "resultado-notas");
             return;
         }
         
@@ -229,14 +276,15 @@ class SistemaNotas {
         const mediaFinal = Math.min(10, mediaBase + bonus);
         
         let html = `
-            <div class="destaque">
-                <h4>Resumo para ${materia}:</h4>
-            </div>
-            <ul class="list-group mb-3">
-                <li class="list-group-item">Média Base (sem bônus): ${mediaBase.toFixed(2)}</li>
-                <li class="list-group-item">Bônus Adicional: +${bonus.toFixed(2)}</li>
-                <li class="list-group-item">Média Final: ${mediaFinal.toFixed(2)}</li>
-            </ul>
+            <div class="resultado-box">
+                <div class="destaque">
+                    <h4>Resumo para ${materia}:</h4>
+                </div>
+                <ul class="list-group mb-3">
+                    <li class="list-group-item">Média Base (sem bônus): ${mediaBase.toFixed(2)}</li>
+                    <li class="list-group-item">Bônus Adicional: +${bonus.toFixed(2)}</li>
+                    <li class="list-group-item">Média Final: ${mediaFinal.toFixed(2)}</li>
+                </ul>
         `;
         
         if (mediaFinal >= 6) {
@@ -256,6 +304,7 @@ class SistemaNotas {
             }
         }
         
+        html += `</div>`;
         this.mostrarResultado(html, null, "resultado-media");
     }
 

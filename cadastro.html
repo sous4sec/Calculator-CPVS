@@ -12,13 +12,20 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- modo escuro -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="dark-mode.js" defer></script>
+    <script src="sistema-notas.js" defer></script>
+
 </head>
 <body>
     <header>
         <div class="interface">
             <div class="logo">
                 <a href="index.html">
-                    <img src="public/images/icon/icon1.png" alt="Logo Sistema de Notas">
+                    <img src="grade-f.png" alt="Logo Sistema de Notas">
+                    Calcule<span>Já</span> <h1>(CVPS)</h1>
                 </a>
             </div>
             <nav class="menu-desktop">
@@ -29,8 +36,29 @@
                     <li><a href="situacao.html">Situação</a></li>
                 </ul>
             </nav>
+            <div class="dark-mode-toggle">
+                <button id="toggle-dark-mode" aria-label="Alternar modo escuro">
+                    <i class="bi bi-brightness-low"></i>
+                </button>
+            </div>
         </div>
     </header>
+
+
+    <hr class="linha-divisoria">
+
+
+    <section class="topo-do-site-cadastro">
+        <div class="interface">
+            <div class="flex">
+                <div class="txt-topo-site">
+                    <h1> <span>Como usar</span> o Cadastro de <span>Notas?</span></h1>
+                    <p>Para cadastrar suas notas no sistema, primeiro selecione a <span>matéria desejada</span> na lista disponível. Em seguida, escolha o <span>tipo de prova</span> correspondente, como <span>Atividade Contínua</span>, <span>Prova Oficial</span> ou outro, lembrando que cada tipo pode ter um <span>peso diferente</span> na sua média final. Depois, insira a <span>nota obtida</span>, sempre utilizando um valor entre <span>0 e 10</span>, e tome cuidado para informar o número corretamente. Com todos os campos preenchidos, basta clicar em <span>"Confirmar Cadastro"</span> para registrar a nota no sistema. Se quiser, você também pode definir uma <span>nota de bônus</span>, que será aplicada automaticamente em todas as matérias. Para isso, digite o valor da bonificação e <span>confirme</span> para salvar.</p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="linha-divisoria">
     
     <section class="projetos">
         <div class="interface">
@@ -105,17 +133,16 @@
         <div class="interface">
             <div class="line-footer">
                 <div class="flex">
-                    <div class="logo-footer">
-                        <img src="public/images/icon/icon1.png" alt="Logo Sistema de Notas">
+                    <div class="logo-footer-text flex">
+                        <img src="grade-f.png" alt="Logo Sistema de Notas" width="40" height="40">
+                        <p><i class="bi bi-c-circle"></i> Sistema de Notas Escolares</p>
                     </div>
                     <div class="btn-social">
-                        <a href="#" target="_blank"><button><i class="bi bi-github"></i></button></a>
-                        <a href="#" target="_blank"><button><i class="bi bi-linkedin"></i></button></a>
+                        <a href="https://github.com/sous4sec/Calculator-CPVS" target="_blank"><button><i class="bi bi-github"></i></button></a>
+                        <a href="https://www.linkedin.com/in/matheussousa-l/" target="_blank"><button><i class="bi bi-linkedin"></i></button></a>
+                        <a href="https://www.portoseguro.org.br/" target="_blank"><button><i class="bi"><img src="cpvs-wth.png" alt="cpvs" width="32" height="32" /></i></button></a>
                     </div>
                 </div>
-            </div>
-            <div class="line-footer borda">
-                <p><i class="bi bi-c-circle"></i> Sistema de Notas Escolares</p>
             </div>
         </div>
     </footer>
