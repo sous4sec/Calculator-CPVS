@@ -28,8 +28,6 @@
     --cor-card-escuro: #2d3748;
     --cor-hover-escuro: #4a5568;
     --cor-detalhe-escuro: #fc8181;
-
-
     
 
 
@@ -654,9 +652,4 @@ body.dark-mode {
 
 .dark-mode .img-topo-site img {
     animation: float-dark 4s ease-in-out infinite alternate;
-
-
-
-
-    
 }
