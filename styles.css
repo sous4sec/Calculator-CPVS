@@ -17,6 +17,22 @@
     /* Sombras sutis */
     --sombra-box: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --sombra-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+
+    /* Adicione estas variáveis junto com as existentes no :root */
+    --cor-fundo-escuro: #1a202c;
+    --cor-texto-escuro: #e2e8f0;
+    --cor-destaque-escuro: #f56565;
+    --cor-secundaria-escuro: #a0aec0;
+    --cor-borda-escuro: #2d3748;
+    --cor-card-escuro: #2d3748;
+    --cor-hover-escuro: #4a5568;
+    --cor-detalhe-escuro: #fc8181;
+
+
+    
+
+
 }
 
 * {
@@ -186,8 +202,9 @@ section.topo-do-site .flex {
 .topo-do-site h1 {
     color: var(--cor-destaque);
     font-size: 40px;
-    font-weight: 700;
-    margin-bottom: 24px;
+    font-weight: 800;
+    margin-top: 10px;
+    margin-bottom: 8px;
     line-height: 1.2;
 }
 
@@ -199,8 +216,12 @@ section.topo-do-site .flex {
     font-size: 18px;
     color: var(--cor-texto);
     opacity: 0.9;
-    max-width: 600px;
-    margin-bottom: 32px;
+    max-width: 800px;
+}
+
+.topo-do-site p span {
+    font-weight: bold;
+    color: var(--cor-destaque);
 }
 
 
@@ -324,6 +345,22 @@ footer .btn-social button i img {
 }
 
 
+.logo-footer-text {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+
+.logo-footer-text p {
+    margin-top: 3px;
+    font-size: 10px;
+    color: var(--cor-texto); /* ou ajuste conforme o seu design */
+    font-weight: bold;
+}
+
+
 
 /* LINHA DIVISÓRIA */
 .linha-divisoria {
@@ -388,4 +425,233 @@ footer .btn-social button i img {
     .topo-do-site h1 {
         font-size: 32px;
     }
+}
+
+.mb-3 {
+    margin-bottom: 30px;
+}
+
+.mt-4 {
+    text-align: center;
+    font-weight: 900;
+    font-size: 20px;
+    color: var(--cor-destaque);
+    margin-top: 20px;
+}
+
+.btn-confirmar-bonus {
+    background-color: var(--cor-destaque);
+    color: white;
+    padding: 12px 24px;
+    border-radius: var(--borda-radius);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    
+}
+
+
+/* ==================== */
+/* ESTILOS DO MODO ESCURO */
+/* ==================== */
+body.dark-mode {
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-texto-escuro);
+}
+
+/* Componentes principais */
+.dark-mode header,
+.dark-mode footer,
+.dark-mode .projetos-box,
+.dark-mode .card,
+.dark-mode .btn-menu {
+    background-color: var(--cor-card-escuro);
+    border-color: var(--cor-borda-escuro);
+    color: var(--cor-texto-escuro);
+}
+
+/* ==================== */
+/* TEXTOS NO MODO ESCURO */
+/* ==================== */
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode p,
+.dark-mode .destaque {
+    color: var(--cor-texto-escuro) !important;
+}
+
+/* Títulos com spans destacados */
+.dark-mode .titulo,
+.dark-mode .topo-do-site h1 {
+    color: var(--cor-texto-escuro) !important;
+}
+
+.dark-mode .titulo span,
+.dark-mode .topo-do-site h1 span {
+    color: var(--cor-detalhe-escuro) !important;
+    transition: all 0.3s ease;
+}
+
+/* ======================== */
+/* EFEITOS HOVER NO HEADER */
+/* ======================== */
+.dark-mode header .logo a {
+    transition: all 0.3s ease;
+}
+
+.dark-mode header .logo a:hover {
+    color: var(--cor-destaque);
+}
+
+.dark-mode header .logo a:hover span {
+    color: var(--cor-destaque) !important;
+    text-shadow: 0 0 12px rgba(229, 62, 62, 0.5);
+    transform: scale(1.05);
+}
+
+.dark-mode header .logo a:hover h1 {
+    color: var(--cor-destaque) !important;
+    text-shadow: 0 0 8px rgba(229, 62, 62, 0.3);
+}
+
+/* Melhoria: Efeito ativo/foco */
+.dark-mode header .logo a:active span,
+.dark-mode header .logo a:focus span {
+    transform: scale(0.95);
+}
+
+
+
+/* Links e hover */
+.dark-mode a,
+.dark-mode header a,
+.dark-mode .btn-menu {
+    color: var(--cor-texto-escuro);
+}
+
+.dark-mode a:hover,
+.dark-mode header a:hover,
+.dark-mode .btn-menu:hover {
+    color: var(--cor-destaque-escuro);
+}
+
+/* Botões e interações */
+.dark-mode .btn-menu:hover {
+    background-color: var(--cor-hover-escuro);
+}
+
+.dark-mode .card-header {
+    background-color: var(--cor-destaque-escuro);
+    color: white;
+}
+
+/* Elementos de interface */
+.dark-mode .linha-divisoria {
+    background-color: var(--cor-borda-escuro);
+}
+
+.dark-mode .list-group-item {
+    background-color: var(--cor-card-escuro);
+    border-color: var(--cor-borda-escuro);
+    color: var(--cor-texto-escuro);
+}
+
+/* Botão de alternância */
+.dark-mode-toggle {
+    position: relative;
+    margin-left: 20px;
+}
+
+#toggle-dark-mode {
+    background: none;
+    border: none;
+    color: var(--cor-texto);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 8px;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ÍCONE DO SOL MAIOR (APENAS ESTA ALTERAÇÃO) */
+#toggle-dark-mode .bi-brightness-low {
+    font-size: 1.8rem; /* Aumentado de 1.5rem para 1.8rem */
+    margin: -2px 0 0 -2px; /* Ajuste fino de posicionamento */
+}
+
+#toggle-dark-mode:hover {
+    background-color: var(--cor-hover);
+    transform: scale(1.1);
+}
+
+.dark-mode #toggle-dark-mode {
+    color: var(--cor-texto-escuro);
+}
+
+.dark-mode #toggle-dark-mode:hover {
+    background-color: var(--cor-hover-escuro);
+}
+
+/* Classes de estado */
+.dark-mode .sucesso {
+    color: #68d391 !important;
+}
+
+.dark-mode .erro {
+    color: #fc8181 !important;
+}
+
+.dark-mode .aviso {
+    color: #f6ad55 !important;
+}
+
+.dark-mode .menu {
+    color: var(--cor-secundaria-escuro) !important;
+}
+
+/* Formulários (se aplicável) */
+.dark-mode input,
+.dark-mode select,
+.dark-mode textarea {
+    background-color: var(--cor-card-escuro);
+    border-color: var(--cor-borda-escuro);
+    color: var(--cor-texto-escuro);
+}
+
+.dark-mode input::placeholder {
+    color: var(--cor-secundaria-escuro);
+}
+
+/* Rodapé */
+.dark-mode footer .btn-social button {
+    background-color: var(--cor-destaque-escuro);
+}
+
+.dark-mode footer .btn-social button:hover {
+    box-shadow: 0px 0px 20px var(--cor-detalhe-escuro);
+}
+
+/* Animações */
+@keyframes float-dark {
+    0% {
+    transform: translateY(0);
+    filter: drop-shadow(0 8px 16px rgba(245, 101, 101, 0.1));
+    }
+    100% {
+    transform: translateY(-16px);
+    filter: drop-shadow(0 8px 16px rgba(245, 101, 101, 0.2));
+    }
+}
+
+.dark-mode .img-topo-site img {
+    animation: float-dark 4s ease-in-out infinite alternate;
 }

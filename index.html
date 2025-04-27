@@ -12,6 +12,12 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- modo escuro -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="dark-mode.js" defer></script>
+    <script src="sistema-notas.js" defer></script>
+
 </head>
 <body>
     <header>
@@ -30,6 +36,11 @@
                     <li><a href="situacao.html">Situação</a></li>
                 </ul>
             </nav>
+            <div class="dark-mode-toggle">
+    <button id="toggle-dark-mode" aria-label="Alternar modo escuro">
+        <i class="bi bi-brightness-low"></i>
+    </button>
+</div>
         </div>
     </header>
     
@@ -38,7 +49,7 @@
             <div class="flex">
                 <div class="txt-topo-site">
                     <h1>Sistema de <span>Notas Escolares</span></h1>
-                    <p>Gerencie e acompanhe suas notas escolares de forma simples e eficiente.</p>
+                    <p>O <span>NotaFácil CPVS</span> é uma plataforma <span>simples</span> e <span>rápida</span> para você registrar suas <span>notas</span> e obter um <span>feedback</span> sobre suas <span>médias escolares</span>, antes da divulgação oficial do colégio no final do semestre. Desenvolvido por um aluno do <span>Colégio Visconde de Porto Seguro</span>, o sistema permite que você acompanhe seu desempenho de maneira ágil e eficiente. Mantenha-se sempre <span>atualizado</span> e no <span>controle</span> da sua jornada escolar!</p>
                 </div>
                 <div class="img-topo-site">
                     <img src="cvps-logo-cpt.png" alt="Calculadora">
@@ -51,7 +62,7 @@
     
     <section class="projetos">
         <div class="interface">
-            <h2 class="titulo">MENU <span>PRINCIPAL</span></h2>
+            <h2 class="titulo"><span>MENU</span> PRINCIPAL</h2>
             <div class="flex">
                 <div class="projetos-box">
                     <div class="card">
@@ -77,14 +88,13 @@
         </div>
     </section>
     
-    
     <footer>
         <div class="interface">
             <div class="line-footer">
                 <div class="flex">
-                    <div class="logo-footer">
-                        <img src="grade-f.png" alt="Logo Sistema de Notas">
-                        
+                    <div class="logo-footer-text flex">
+                        <img src="grade-f.png" alt="Logo Sistema de Notas" width="40" height="40">
+                        <p><i class="bi bi-c-circle"></i> Sistema de Notas Escolares</p>
                     </div>
                     <div class="btn-social">
                         <a href="https://github.com/sous4sec/Calculator-CPVS" target="_blank"><button><i class="bi bi-github"></i></button></a>
@@ -93,11 +103,10 @@
                     </div>
                 </div>
             </div>
-            <div class="line-footer borda">
-                <p><i class="bi bi-c-circle"></i> Sistema de Notas Escolares</p>
-            </div>
         </div>
     </footer>
+    
+    
 
     <script src="sistema-notas.js"></script>
 </body>
