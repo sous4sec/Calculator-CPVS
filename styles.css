@@ -95,6 +95,45 @@ body {
     transform: scale(1.1);
 }
 
+
+/* BOTÕES E CONTROLES */
+.btn-confirmar {
+    padding: 24px 16px;
+    font-size: 16px;
+    color: var(--cor-borda);
+    background-color: var(--cor-destaque);
+    border: var(--borda-fina);
+    border-radius: var(--borda-radius);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    box-shadow: var(--sombra-box);
+}
+
+.btn-confirmar:hover {
+    background-color: var(--cor-hover);
+    transform: translateY(-4px);
+    box-shadow: var(--sombra-hover);
+    color: var(--cor-destaque);
+    background-color: rgb(218, 218, 218);
+}
+
+.btn-confirmar i {
+    font-size: 32px;
+    color: var(--cor-destaque);
+    transition: all 0.3s ease;
+}
+
+.btn-confirmar:hover i {
+    transform: scale(1.1);
+}
+
+
 /* TÍTULOS E TEXTOS */
 h2.titulo {
     color: var(--cor-destaque);
@@ -503,6 +542,20 @@ body.dark-mode {
     color: var(--cor-texto-escuro);
 }
 
+
+.dark-mode .btn-confirmar {
+    background-color: var(--cor-destaque-escuro);
+    border-color: var(--cor-borda-escuro);
+    color: var(--cor-texto-escuro);
+}
+
+.dark-mode .btn-confirmar:hover{
+    background-color: var(--cor-hover-escuro);
+    border-color: var(--cor-borda-escuro);
+    color: var(--cor-destaque-escuro);
+    
+}
+
 /* ==================== */
 /* TEXTOS NO MODO ESCURO */
 /* ==================== */
@@ -706,6 +759,7 @@ body.dark-mode {
     color: var(--cor-texto);
     transition: all 0.3s ease;
     box-shadow: none;
+    margin-top: 15px;
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -714,11 +768,12 @@ body.dark-mode {
 .dark-mode .form-control, 
 .dark-mode .form-select {
     background-color: var(--cor-card-escuro);
-    border-color: var(--cor-borda-escuro);
+    border-color: rgba(218, 218, 218, 0.212);
     color: var(--cor-texto-escuro);
 }
 
 .form-control:focus, .form-select:focus {
+    margin-top: 20px;
     outline: none;
     border-color: var(--cor-destaque);
     box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.2);
@@ -732,7 +787,7 @@ body.dark-mode {
 
 /* Estilo dos resultados */
 .resultado-box {
-    background-color: var(--cor-card);
+    background-color: rgb(218, 218, 218);;
     border-radius: var(--borda-radius);
     border: var(--borda-fina);
     padding: 20px;
@@ -740,13 +795,18 @@ body.dark-mode {
     box-shadow: var(--sombra-box);
 }
 
+.resultado-box {
+    background-color: rgba(218, 218, 218, 0.212);
+    border-color: var(--cor-destaque-escuro);
+}
+
 .dark-mode .resultado-box {
-    background-color: var(--cor-card-escuro);
-    border-color: var(--cor-borda-escuro);
+    background-color: rgba(218, 218, 218, 0.212);
+    border-color: var(--cor-destaque-escuro);
 }
 
 .resultado-box p {
-    margin-bottom: 10px;
+    margin: 10px;
     line-height: 1.6;
 }
 
